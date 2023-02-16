@@ -31,24 +31,13 @@ def write_value_string(node_id, value):
 
 
 # node id for all the variables
-nodeid_b_bool_test = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.b_bool_test'
-nodeid_i_increment = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_increment'
-nodeid_i_new_value1 = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_new_value1'
-nodeid_i_new_value2 = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_new_value2'
-nodeid_i_sum = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_sum'
-nodeid_i_value1 = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_value1'
-nodeid_i_value2 = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_value2'
-nodeid_s_string_test = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.vc_string_test'
-nodeid_i_sum_max = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_sum_max'
-nodeid_i_sum_trag = 'ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.i_sum_trag'
+nodeid_b_bool_test = '''This can be ontained using ua client gui or Ua expert'''
 
 # powerbi streaming data set URL
-pbi_strmdata_url = 'https://api.powerbi.com/beta/b55539a2-16d1-4d55-a3e1-5d9b450363ac/datasets' \
-                   '/9f29e8b8-7fa9-489c-ae12-0fee729088dd/rows?key=6ywFrISGWOexiXdfdK%2F4xOddYw7%2F' \
-                   'jBmLOid40GI1sZTG4cfjeX%2Ftvr38d76vuR78Ms77aGwHmYPWrhg13rjVRg%3D%3D'
+pbi_strmdata_url = 'URL from power BI'
 
 # connecting to client
-client = Client("opc.tcp://localhost:4840")
+client = Client("from ua expert")
 client.connect()
 
 while True:
@@ -66,9 +55,4 @@ while True:
         ]
         requests.post(pbi_strmdata_url, json=stream_json)
 
-# try:
-#     client.connect()
-#     write_value_bool(nodeid_b_bool_test, False)
-#
-# finally:
-#     client.disconnect()
+
